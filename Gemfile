@@ -4,8 +4,16 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'pg', :group => :development
+#gem 'pg', :group => :development
 #gem 'sqlite3-ruby', '1.3.2', :group => :development
+group :development, :test do
+  # Use sqlite3 as the database for Active Record
+	gem 'sqlite3', '1.3.12'
+
+  group :production do
+    gem 'pg'
+  end
+end
 #gem 'pg'         #gem to use in production environment
 
 gem 'jquery-rails', '2.1.4'
